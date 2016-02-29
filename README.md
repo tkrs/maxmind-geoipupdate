@@ -5,7 +5,7 @@
 ### Pull an image
 
 ```
-docker pull tkrs/geoipupdate
+docker pull tkrs/maxmind-geoipupdate
 ```
 
 ### Run the image
