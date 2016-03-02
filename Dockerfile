@@ -28,4 +28,4 @@ RUN BUILD_DEPS='gcc make libc-dev libtool automake autoconf' \
  && rm -rf /tmp/geoipupdate-* \
  && chmod 755 /bin/run.sh
 
-CMD ["crond", "-f", "-c", "/root/crontabs"]
+CMD /bin/run.sh && crond -f -c /root/crontabs
