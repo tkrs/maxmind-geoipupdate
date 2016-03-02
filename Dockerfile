@@ -9,7 +9,7 @@ ENV GEOIP_DB_DIR        /usr/share/GeoIP
 
 COPY GeoIP.conf.tmpl ${GEOIP_CONF_FILE}.tmpl
 COPY run.sh /bin/
-COPY crontabs /root/
+COPY ./crontabs/root /root/crontabs/
 
 RUN BUILD_DEPS='gcc make libc-dev libtool automake autoconf' \
  && apk-install curl-dev ${BUILD_DEPS} \
