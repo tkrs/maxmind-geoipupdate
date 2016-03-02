@@ -1,5 +1,7 @@
 # geoipupdate
 
+[![Docker Repository on Quay](https://quay.io/repository/tkrs/maxmind-geoipupdate/status "Docker Repository on Quay")](https://quay.io/repository/tkrs/maxmind-geoipupdate)
+
 ## Usage
 
 ### Pull an image
