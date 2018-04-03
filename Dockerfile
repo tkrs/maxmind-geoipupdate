@@ -2,7 +2,7 @@ FROM gliderlabs/alpine:3.3
 
 MAINTAINER Takeru Sato <midium.size@gmail.com>
 
-ENV GEOIP_UPDATE_VERSION  2.2.2
+ENV GEOIP_UPDATE_VERSION  2.5.0
 ENV SRC_DL_URL_PREF       https://github.com/maxmind/geoipupdate/archive
 ENV GEOIP_CONF_FILE       /usr/etc/GeoIP.conf
 ENV GEOIP_DB_DIR          /usr/share/GeoIP
