@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.8
 
 MAINTAINER Takeru Sato <type.in.type@gmail.com>
 
