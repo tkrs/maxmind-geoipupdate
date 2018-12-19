@@ -6,7 +6,6 @@ ENV GEOIP_UPDATE_VERSION  2.5.0
 ENV SRC_DL_URL_PREF       https://github.com/maxmind/geoipupdate/archive
 ENV GEOIP_CONF_FILE       /usr/etc/GeoIP.conf
 ENV GEOIP_DB_DIR          /usr/share/GeoIP
-ENV RUN_ONCE              0
 
 COPY GeoIP.conf.tmpl ${GEOIP_CONF_FILE}.tmpl
 COPY run.sh /bin/
@@ -29,4 +28,4 @@ RUN BUILD_DEPS='gcc make libc-dev curl-dev zlib-dev libtool automake autoconf' \
  && rm -rf /tmp/geoipupdate-* \
  && chmod 755 /bin/run.sh
 
-CMD /bin/run.sh && if [ "$RUN_ONCE" != "1" ]; then crond -f -c /root/crontabs; fi
+CMD /bin/run.sh && crond -f -c /root/crontabs
