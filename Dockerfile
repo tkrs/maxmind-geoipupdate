@@ -2,7 +2,7 @@ FROM alpine:3.8
 
 MAINTAINER Takeru Sato <type.in.type@gmail.com>
 
-ENV GEOIP_UPDATE_VERSION  3.1.0
+ENV GEOIP_UPDATE_VERSION  3.1.1
 ENV SRC_DL_URL_PREF       https://github.com/maxmind/geoipupdate-legacy/archive
 ENV GEOIP_CONF_FILE       /usr/etc/GeoIP.conf
 ENV GEOIP_DB_DIR          /usr/share/GeoIP
