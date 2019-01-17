@@ -1,1 +1,1 @@
-55 20 * * * /bin/run.sh
+55 20 * * * /usr/local/bin/run-geoipupdate
