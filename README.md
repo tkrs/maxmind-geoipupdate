@@ -7,6 +7,12 @@
 ### Pull an image
 
 ```
+docker pull quay.io/tkrs/maxmind-geoipupdate
+```
+
+or
+
+```
 docker pull tkrs/maxmind-geoipupdate
 ```
 
