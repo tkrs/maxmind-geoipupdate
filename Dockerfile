@@ -1,6 +1,6 @@
 FROM golang:1.11-alpine3.8 as builder
 
-MAINTAINER Takeru Sato <type.in.type@gmail.com>
+LABEL maintainer="Takeru Sato <type.in.type@gmail.com>"
 
 ENV GEOIP_UPDATE_VERSION  4.0.0
 ENV SRC_DL_URL_PREF       https://github.com/maxmind/geoipupdate/archive
@@ -26,4 +26,4 @@ COPY --from=builder /usr/local/bin/sigil /usr/local/bin/
 
 RUN apk add --update --no-cache ca-certificates
 
-CMD /bin/run.sh && crond -f -c /root/crontabs
+CMD /usr/local/bin/run-geoipupdate && crond -f -c /root/crontabs
