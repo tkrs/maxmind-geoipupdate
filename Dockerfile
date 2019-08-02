@@ -17,13 +17,14 @@ FROM alpine:3.9
 
 ENV GEOIP_CONF_FILE /usr/local/etc/GeoIP.conf
 ENV GEOIP_DB_DIR    /usr/share/GeoIP
+ENV SCHEDULE        "55 20 * * *"
 
 COPY GeoIP.conf.tmpl ${GEOIP_CONF_FILE}.tmpl
-COPY run-geoipupdate /usr/local/bin/
-COPY ./crontabs/root /root/crontabs/
+COPY run-geoipupdate /usr/local/bin/run-geoipupdate
+COPY run /usr/local/bin/
 COPY --from=builder /go/src/github.com/maxmind/geoipupdate/build/geoipupdate /usr/local/bin/
 COPY --from=builder /usr/local/bin/sigil /usr/local/bin/
 
 RUN apk add --update --no-cache ca-certificates
 
-CMD /usr/local/bin/run-geoipupdate && crond -f -c /root/crontabs
+CMD /usr/local/bin/run
