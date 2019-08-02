@@ -31,3 +31,4 @@ docker run -d -e GEOIP_DB_DIR=/data/GeoIP tkrs/geoipupdate
 - *ACCOUNT_ID*: Your MaxMind account ID. Defaults to "0".
 - *LICENSE_KEY*: Your case-sensitive MaxMind license key. Defaults to "000000000000".
 - *EDITION_IDS*: List of database edition IDs. Defaults to "GeoLite2-City GeoLite2-Country".
+- *SCHEDULE*: The schedule to run geoipupdate. Defaults to "55 20 * * *".
