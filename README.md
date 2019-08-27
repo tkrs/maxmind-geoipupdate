@@ -1,16 +1,11 @@
 # geoipupdate
 
-[![Docker Repository on Quay](https://quay.io/repository/tkrs/maxmind-geoipupdate/status "Docker Repository on Quay")](https://quay.io/repository/tkrs/maxmind-geoipupdate)
+[![Docker Image Pulls](https://img.shields.io/docker/pulls/tkrs/maxmind-geoipupdate "Docker Image Pulls")](https://img.shields.io/docker/pulls/tkrs/maxmind-geoipupdate)
+[![Docker Image Build](https://img.shields.io/docker/build/tkrs/maxmind-geoipupdate "Docker Image Build")](https://img.shields.io/docker/build/tkrs/maxmind-geoipupdate)
 
 ## Usage
 
 ### Pull an image
-
-```
-docker pull quay.io/tkrs/maxmind-geoipupdate
-```
-
-or
 
 ```
 docker pull tkrs/maxmind-geoipupdate
