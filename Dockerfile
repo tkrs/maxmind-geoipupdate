@@ -2,7 +2,7 @@ FROM golang:1.12-alpine3.9 as builder
 
 LABEL maintainer="Takeru Sato <type.in.type@gmail.com>"
 
-ENV GEOIP_UPDATE_VERSION  4.0.3
+ENV GEOIP_UPDATE_VERSION  4.0.4
 ENV SRC_DL_URL_PREF       https://github.com/maxmind/geoipupdate/archive
 ENV SRC_PATH              /go/src/github.com/maxmind/geoipupdate
 
