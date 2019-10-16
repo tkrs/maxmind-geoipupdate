@@ -2,15 +2,16 @@ FROM golang:1.12-alpine3.9 as builder
 
 LABEL maintainer="Takeru Sato <type.in.type@gmail.com>"
 
-ENV GEOIP_UPDATE_VERSION  4.0.4
+ENV GO111MODULE           on
+ENV GEOIP_UPDATE_VERSION  4.0.6
 ENV SRC_DL_URL_PREF       https://github.com/maxmind/geoipupdate/archive
 ENV SRC_PATH              /go/src/github.com/maxmind/geoipupdate
 
 RUN mkdir -p /go/src/github.com/maxmind/
-RUN apk add --update --no-cache curl gcc make libc-dev
+RUN apk add --update --no-cache curl gcc make libc-dev git
 RUN curl -L "${SRC_DL_URL_PREF}/v${GEOIP_UPDATE_VERSION}.tar.gz" | tar -zxC /go/src/github.com/maxmind/
 RUN mv "${SRC_PATH}-${GEOIP_UPDATE_VERSION}" /go/src/github.com/maxmind/geoipupdate
-RUN cd "${SRC_PATH}"; make build/geoipupdate
+RUN cd "${SRC_PATH}" && make build/geoipupdate
 RUN curl -L "https://github.com/gliderlabs/sigil/releases/download/v0.4.0/sigil_0.4.0_$(uname -sm|tr \  _).tgz" | tar -zxC /usr/local/bin
 
 FROM alpine:3.9
