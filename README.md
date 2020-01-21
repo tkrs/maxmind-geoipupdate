@@ -20,7 +20,7 @@ docker run -d -e GEOIP_DB_DIR=/data/GeoIP tkrs/geoipupdate
 
 ### Variables
 
-- *GEOIP_DB_DIR*: The directory to store the database files. Defaults to "/usr/local/share/GeoIP".
+- *GEOIP_DB_DIR*: The directory to store the database files. Defaults to "/usr/share/GeoIP".
 - *MAXMIND_HOST*: The server to use. Defaults to "updates.maxmind.com".
 - *PROTOCOL*: The desired protocol either "https" (default) or "http".
 - *ACCOUNT_ID*: Your MaxMind account ID. Defaults to "0".
