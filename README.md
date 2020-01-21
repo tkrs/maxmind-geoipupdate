@@ -30,7 +30,7 @@ docker run -it \
         -e ACCOUNT_ID=${YOUR_ACCOUNT_ID} \
         -e LICENSE_KEY=${YOUR_LICENSE_KEY} \
         -e GEOIP_DB_DIR=/data/GeoIP \
-        -v "${PWD}":/data/GeoIP
+        -v "${PWD}":/data/GeoIP \
         tkrs/maxmind-geoipupdate \
         /usr/local/bin/run-geoipupdate
 ```
