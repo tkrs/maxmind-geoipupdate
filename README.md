@@ -26,7 +26,7 @@ docker run -d -e ACCOUNT_ID=${YOUR_ACCOUNT_ID} -e LICENSE_KEY=${YOUR_LICENSE_KEY
 Be able to run `/usr/local/bin/run-geoipupdate` directly if you want to one-shot.
 
 ```
-docker run -it \
+docker run --rm -it \
         -e ACCOUNT_ID=${YOUR_ACCOUNT_ID} \
         -e LICENSE_KEY=${YOUR_LICENSE_KEY} \
         -e GEOIP_DB_DIR=/data/GeoIP \
