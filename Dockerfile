@@ -1,9 +1,9 @@
-FROM golang:1.13-alpine3.10 as builder
+FROM golang:1.14.2-alpine3.11 as builder
 
 LABEL maintainer="Takeru Sato <type.in.type@gmail.com>"
 
-ENV GO111MODULE           on
-ENV GEOIP_UPDATE_VERSION  4.2.2
+# ENV GO111MODULE           on
+ENV GEOIP_UPDATE_VERSION  4.3.0
 ENV SRC_DL_URL_PREF       https://github.com/maxmind/geoipupdate/archive
 ENV SRC_PATH              /go/src/github.com/maxmind/geoipupdate
 
