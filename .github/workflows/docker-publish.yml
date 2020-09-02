@@ -41,5 +41,6 @@ jobs:
         with:
           username: ${{ secrets.QUAY_USER }}
           password: ${{ secrets.QUAY_TOKEN }}
+          registry: quay.io
           repository: ${{ secrets.QUAY_USER }}/maxmind-geoipupdate
           tag_with_ref: true
