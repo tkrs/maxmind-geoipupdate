@@ -27,12 +27,12 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: ${{ github.repository }}/sbt
+          repository: ${{ github.repository }}/maxmind-geoipupdate
           tag_with_ref: true
       - name: push to Docker Hub Registry
         uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: ${{ secrets.DOCKERHUB_USER }}/sbt
+          repository: ${{ secrets.DOCKERHUB_USER }}/maxmind-geoipupdate
           tag_with_ref: true
