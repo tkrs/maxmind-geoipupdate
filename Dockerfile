@@ -1,4 +1,4 @@
-FROM golang:1.14.2-alpine3.11 as builder
+FROM golang:1.15.1-alpine3.12 as builder
 
 LABEL maintainer="Takeru Sato <type.in.type@gmail.com>"
 
@@ -14,7 +14,7 @@ RUN mv "${SRC_PATH}-${GEOIP_UPDATE_VERSION}" /go/src/github.com/maxmind/geoipupd
 RUN cd "${SRC_PATH}" && make build/geoipupdate
 RUN curl -L "https://github.com/gliderlabs/sigil/releases/download/v0.4.0/sigil_0.4.0_$(uname -sm|tr \  _).tgz" | tar -zxC /usr/local/bin
 
-FROM alpine:3.10
+FROM alpine:3.12
 
 ENV GEOIP_CONF_FILE /usr/local/etc/GeoIP.conf
 ENV GEOIP_DB_DIR    /usr/share/GeoIP
