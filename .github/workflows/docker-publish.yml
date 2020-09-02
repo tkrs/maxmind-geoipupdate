@@ -36,3 +36,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: ${{ secrets.DOCKERHUB_USER }}/maxmind-geoipupdate
           tag_with_ref: true
+      - name: push to Quay.io Registry
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.QUAY_USER }}
+          password: ${{ secrets.QUAY_TOKEN }}
+          repository: ${{ secrets.QUAY_USER }}/maxmind-geoipupdate
+          tag_with_ref: true
