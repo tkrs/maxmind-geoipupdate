@@ -14,7 +14,7 @@ RUN mv "${SRC_PATH}-${GEOIP_UPDATE_VERSION}" /go/src/github.com/maxmind/geoipupd
 RUN cd "${SRC_PATH}" && make build/geoipupdate
 RUN curl -L "https://github.com/gliderlabs/sigil/releases/download/v0.4.0/sigil_0.4.0_$(uname -sm|tr \  _).tgz" | tar -zxC /usr/local/bin
 
-FROM alpine:3.13.2
+FROM alpine:3.13.3
 
 ENV GEOIP_CONF_FILE /usr/local/etc/GeoIP.conf
 ENV GEOIP_DB_DIR    /usr/share/GeoIP
