@@ -55,19 +55,19 @@ jobs:
           fi
 
       - name: push to GitHub Container Registry
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           builder: ${{ steps.buildx.outputs.name }}
           tags: ghcr.io/${{ github.repository_owner }}/maxmind-geoipupdate:${{ steps.get_version.outputs.VERSION }}
           push: true
       - name: push to Docker Hub Registry
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           builder: ${{ steps.buildx.outputs.name }}
           tags: ${{ secrets.DOCKERHUB_USER }}/maxmind-geoipupdate:${{ steps.get_version.outputs.VERSION }}
           push: true
       - name: push to Quay.io Registry
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           builder: ${{ steps.buildx.outputs.name }}
           tags: quay.io/${{ secrets.QUAY_USER }}/maxmind-geoipupdate:${{ steps.get_version.outputs.VERSION }}
